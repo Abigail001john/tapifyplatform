@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Essentials -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment – Tapify | Complete Your Registration</title>
+    <meta name="description" content="Complete your Tapify registration with a secure bank transfer. Confirm on WhatsApp to activate your access." />
+    <link rel="canonical" href="https://tapifyplatform.net/payment" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tapifyplatform.net/payment" />
+    <meta property="og:title" content="Payment – Tapify" />
+    <meta property="og:description" content="Pay for Tapify Access (₦10,000) and confirm instantly on WhatsApp." />
+    <meta property="og:image" content="https://tapifyplatform.net/assets/images/preview.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://tapifyplatform.net/payment" />
+    <meta name="twitter:title" content="Payment – Tapify" />
+    <meta name="twitter:description" content="Pay for Tapify Access (₦10,000) and confirm instantly on WhatsApp." />
+    <meta name="twitter:image" content="https://tapifyplatform.net/assets/images/preview.jpg" />
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/payment.css" />
+    <link rel="canonical" href="https://tapifyplatform.net/payment/" />
+</head>
+
+<body class="page--payment">
+    <!-- Header (same nav as other pages) -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="/" aria-label="Tapify home" class="logo">
+        <img src="/assets/images/tapifylogo.png" alt="Tapify logo">
+      </a>
+        </div>
+    </header>
+
+    <!-- Payment hero with VIDEO BG -->
+    <section class="payment-hero">
+        <div class="video-bg" aria-hidden="true">
+            <video class="video-bg__media" poster="/assets/video/vid2.mp4" autoplay muted loop playsinline>
+      <source src="/assets/video/vid2.mp4" type="video/mp4" />
+    </video>
+            <div class="video-bg__overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="grid">
+                <!-- LEFT: Payment + user summary -->
+                <section class="card" aria-labelledby="summaryTitle">
+                    <h1 id="summaryTitle" class="h2">Complete Your Payment</h1>
+                    <p class="meta">Hi <strong id="helloName">there</strong> — finish payment to activate your access.</p>
+
+                    <div class="row">
+                        <div>
+                            <label for="name" class="field__label">Full Name</label>
+                            <input id="name" class="field__input" readonly />
+                        </div>
+                        <div>
+                            <label for="username" class="field__label">Username</label>
+                            <input id="username" class="field__input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label for="email" class="field__label">Email</label>
+                            <input id="email" class="field__input" readonly />
+                        </div>
+                        <div>
+                            <label for="phone" class="field__label">Phone</label>
+                            <input id="phone" class="field__input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label class="field__label">Access</label>
+                            <input class="field__input" value="Tapify Access — ₦10,000 (One-Time)" readonly />
+                        </div>
+                        <div>
+                            <label for="amount" class="field__label">Amount</label>
+                            <input id="amount" class="field__input" readonly />
+                        </div>
+                    </div>
+
+                    <div class="countdown" aria-live="polite">
+                        <div class="muted">Complete payment within</div>
+                        <div class="big" id="timer">06:00</div>
+                        <div class="muted">A fresh reference will be generated if time runs out.</div>
+                    </div>
+
+                    <!-- WARNING PROMPT -->
+                    <div role="alert" style="
+          margin:14px 0;
+          padding:12px 14px;
+          border-radius:12px;
+          background:rgba(255,87,87,.15);
+          border:1px solid rgba(255,87,87,.45);
+          color:#ffdede;
+          font-weight:700;
+          text-transform:uppercase;
+          letter-spacing:.3px;">
+                        ⚠️ DO NOT USE OPAY AND PALMPAY TO MAKE PAYMENTS. USE OTHER BANKS TO TRANSFER.
+                    </div>
+
+                    <h2 class="h3" style="margin-top:16px;">Bank Transfer Details</h2>
+                    <div class="payment-details">
+                        <p><strong>Account Name:</strong> <span id="accName">Success Nneamaka</span>
+                            <button class="copy-btn" data-copy="accName">Copy</button></p>
+                        <p><strong>Bank:</strong> <span id="bank">Palmpay</span>
+                            <button class="copy-btn" data-copy="bank">Copy</button></p>
+                        <p><strong>Account Number:</strong> <span id="accNumber">8169745752</span>
+                            <button class="copy-btn" data-copy="accNumber">Copy</button></p>
+                        <p><strong>Amount (NGN):</strong> <span id="amountText">10,000</span>
+                            <button class="copy-btn" data-copy="amountText">Copy</button></p>
+                        <p><strong>Payment Note:</strong> <span id="payNote">TPFY-<span id="ref"></span>-<span id="userTag"></span></span>
+                            <button class="copy-btn" data-copy="payNote">Copy</button></p>
+                    </div>
+
+                    <div class="row" style="margin-top:12px;">
+                        <button class="cta" id="confirmBtn">I Have Paid — Confirm on WhatsApp</button>
+                        <a class="cta" id="confirmTGBtn" href="https://t.me/Workwaveofficial2" target="_blank" rel="noopener">
+    I Have Paid — Confirm on Telegram
+  </a>
+                        <button class="cta ghost" id="helpBtn">Need Help? Chat Admin</button>
+                    </div>
+                    <p class="meta" style="margin-top:8px">After payment, tap “Confirm on WhatsApp.” We’ll verify and activate your access within 24 hours.</p>
+                </section>
+
+                <!-- Floating Powered By Button -->
+                <a href="https://josephaaijay.vercel.app" class="powered-by-btn" target="_blank" title="Visit Nexa by AaiJay">
+    <small>BUILT by<br><strong>NexaTech</strong></small>
+  </a>
+
+
+
+
+
+                <!-- RIGHT: Testimonials -->
+                <aside class="card testimonials" aria-labelledby="tTitle">
+                    <h2 id="tTitle" class="h3">What Tapifiers are saying <span class="badge">Verified</span></h2>
+                    <div class="t-box" id="tBox"></div>
+                </aside>
+            </div>
+
+            <!-- International help -->
+            <section class="card help-card" aria-label="International payments">
+                <p>🌍 <strong>Not in Nigeria?</strong> Message us for alternative payment options.</p>
+                <a class="cta" target="_blank" rel="noopener" href="https://wa.me/2349040989441?text=Hi%20Tapify%20Support%2C%20I%27m%20outside%20Nigeria%20and%20want%20to%20pay.%20Please%20guide%20me.">Chat With Admin</a>
+            </section>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">© 2025 Tapify. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll to top (reuse) -->
+    <button id="scrollTopBtn" class="scrolltop" type="button" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5l-7 7h4v7h6v-7h4l-7-7z" fill="#111"/>
+    </svg>
+  </button>
+
+    <!-- JS -->
+    <script src="/js/script.js"></script>
+    <script src="/js/payment.js"></script>
+</body>
+
+</html>

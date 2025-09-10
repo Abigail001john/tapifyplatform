@@ -1,0 +1,1100 @@
+/* ========= Tapify Flyer Branding ========= */
+
+:root {
+    /* Palette from flyer */
+    --mint: #B3F5E4;
+    /* headings accent */
+    --orange: #FF8C24;
+    /* CTA start */
+    --gold: #FFD54A;
+    /* CTA end */
+    --dark: #0B0B0B;
+    /* primary bg */
+    --dark2: #1A1411;
+    /* warm dark */
+    --white: #ffffff;
+    /* Text */
+    --t-100: #ffffff;
+    --t-300: #eeeeee;
+    --t-500: #bdbdbd;
+    /* Layout tokens */
+    --container: 1180px;
+    --radius: 16px;
+    --shadow: 0 12px 32px rgba(0, 0, 0, .35);
+    --cta: linear-gradient(90deg, var(--orange), var(--gold));
+}
+
+/* Base */
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--t-300);
+    background: radial-gradient(1200px 600px at 85% -10%, rgba(255, 213, 74, .18), transparent 60%), linear-gradient(180deg, var(--dark), var(--dark2));
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 16px
+}
+
+.center {
+    text-align: center
+}
+
+/* Typography */
+
+.h1 {
+    color: var(--mint);
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.05;
+    margin: 0 0 10px
+}
+
+.h2 {
+    color: var(--mint);
+    font-size: 28px;
+    margin: 0 0 16px
+}
+
+.lead {
+    color: var(--t-500);
+    font-size: 18px;
+    margin: 0 0 10px
+}
+
+.meta {
+    color: var(--t-500);
+    margin: 6px 0 14px
+}
+
+.link {
+    color: var(--mint);
+    font-weight: 700;
+    text-decoration: none
+}
+
+.link:hover {
+    text-decoration: underline
+}
+
+/* Header */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 12px 0;
+    background: linear-gradient(180deg, rgba(11, 11, 11, .9), rgba(11, 11, 11, .35));
+    backdrop-filter: blur(8px) saturate(120%);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.logo img {
+    height: 40px
+}
+
+.nav {
+    display: flex;
+    gap: 14px;
+    align-items: center
+}
+
+.nav__link {
+    color: var(--t-300);
+    text-decoration: none;
+    font-weight: 600
+}
+
+.nav__link:hover {
+    color: var(--mint)
+}
+
+/* Buttons */
+
+.btn {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer
+}
+
+.btn--primary {
+    color: #111;
+    background: var(--cta);
+    box-shadow: 0 8px 24px rgba(255, 140, 36, .35);
+    transition: transform .15s ease, filter .15s ease
+}
+
+.btn--primary:hover {
+    transform: translateY(-1px);
+    filter: saturate(1.06)
+}
+
+/* Hero */
+
+.hero {
+    padding: 56px 0
+}
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center
+}
+
+.hero__video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: #000;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px
+}
+
+/* Sections */
+
+.section {
+    margin: 60px 0
+}
+
+/* Cards + Grid */
+
+.grid {
+    display: grid;
+    gap: 16px
+}
+
+.grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+}
+
+.card__title {
+    color: var(--t-100);
+    margin: 0 0 6px
+}
+
+.card__img {
+    margin-top: 8px;
+    border-radius: 12px
+}
+
+.list {
+    padding-left: 18px;
+    margin: 0
+}
+
+.list li {
+    margin: 8px 0;
+    color: var(--t-500)
+}
+
+/* Why mini-cards */
+
+.why .why__card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.why__card--cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start
+}
+
+/* Steps */
+
+.steps {
+    padding-left: 18px;
+    line-height: 1.7;
+    color: var(--t-500)
+}
+
+/* Gallery */
+
+/* --- Rotating Gallery Slider --- */
+
+.gallery-slider {
+    position: relative;
+    margin-top: 12px;
+}
+
+/* Viewport keeps it to one row and saves vertical space */
+
+.gallery__viewport {
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: var(--shadow);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+}
+
+/* Horizontal track */
+
+.gallery__track {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    will-change: scroll-position;
+}
+
+/* Items: fixed height, responsive width (2–5 per view) */
+
+:root {
+    --gallery-item-h: 180px;
+}
+
+.gallery__item {
+    flex: 0 0 calc(50% - 10px);
+    /* phones: 2 per view */
+    height: var(--gallery-item-h);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    display: block;
+}
+
+/* Prev/Next buttons */
+
+.gallery__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+}
+
+.gallery__btn--prev {
+    left: 10px
+}
+
+.gallery__btn--next {
+    right: 10px
+}
+
+/* Breakpoints: show more items per view as width grows */
+
+@media (min-width:560px) {
+    .gallery__item {
+        flex-basis: calc(33.333% - 10px);
+    }
+    /* 3 per view */
+}
+
+@media (min-width:900px) {
+    .gallery__item {
+        flex-basis: calc(25% - 10px);
+    }
+    /* 4 per view */
+}
+
+@media (min-width:1200px) {
+    .gallery__item {
+        flex-basis: calc(20% - 10px);
+    }
+    /* 5 per view */
+    :root {
+        --gallery-item-h: 200px;
+    }
+}
+
+/* FAQ */
+
+.faq {
+    display: grid;
+    gap: 10px
+}
+
+.faq__item {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: var(--t-500)
+}
+
+.faq__item summary {
+    cursor: pointer;
+    color: var(--t-100);
+    font-weight: 700
+}
+
+/* Footer */
+
+.footer {
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    padding: 20px 0;
+    color: var(--t-500)
+}
+
+/* Responsive */
+
+@media (max-width:1024px) {
+    .grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+    .gallery {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}
+
+@media (max-width:900px) {
+    .hero__grid {
+        grid-template-columns: 1fr
+    }
+    .grid--3 {
+        grid-template-columns: 1fr
+    }
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 150px
+    }
+}
+
+@media (max-width:560px) {
+    .grid--4 {
+        grid-template-columns: 1fr
+    }
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 130px
+    }
+}
+
+/* --- Mobile toggle (base/desktop) --- */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 14px
+}
+
+.nav__menu {
+    display: flex;
+    gap: 14px;
+    align-items: center
+}
+
+.nav__toggle {
+    display: none;
+    /* hidden on desktop */
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+    cursor: pointer;
+}
+
+.nav__bar {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: var(--t-300);
+    border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease, top .2s ease, bottom .2s ease;
+}
+
+.nav__bar:nth-child(1) {
+    top: 14px
+}
+
+.nav__bar:nth-child(2) {
+    top: 21px
+}
+
+.nav__bar:nth-child(3) {
+    bottom: 14px
+}
+
+/* X animation when open */
+
+.nav--open .nav__bar:nth-child(1) {
+    top: 21px;
+    transform: rotate(45deg)
+}
+
+.nav--open .nav__bar:nth-child(2) {
+    opacity: 0
+}
+
+.nav--open .nav__bar:nth-child(3) {
+    bottom: auto;
+    top: 21px;
+    transform: rotate(-45deg)
+}
+
+/* Prevent background scroll when menu open (mobile only) */
+
+.no-scroll {
+    overflow: hidden
+}
+
+@media (max-width:900px) {
+    .nav__toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 60
+    }
+    /* Hide menu by default on mobile */
+    .nav__menu {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 64px;
+        /* approx header height */
+        padding: 14px 16px;
+        background: linear-gradient(180deg, rgba(11, 11, 11, .98), rgba(11, 11, 11, .92));
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        backdrop-filter: blur(10px) saturate(120%);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, .45);
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav--open .nav__menu {
+        display: flex
+    }
+    /* Make links bigger for touch */
+    .nav__link {
+        padding: 10px 2px;
+        font-size: 16px
+    }
+    .nav .btn {
+        align-self: flex-start
+    }
+}
+
+/* Scroll-to-top button */
+
+.scrolltop {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: var(--cta);
+    /* your orange→gold gradient */
+    color: #111;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    opacity: 0;
+    transform: translateY(8px) scale(.95);
+    pointer-events: none;
+    z-index: 70;
+    transition: opacity .2s ease, transform .2s ease, filter .15s ease;
+}
+
+.scrolltop--show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.scrolltop:hover {
+    filter: saturate(1.08);
+}
+
+/* Hide when mobile menu is open */
+
+.no-scroll .scrolltop {
+    opacity: 0;
+    pointer-events: none
+}
+
+/* Small screens: nudge up a bit */
+
+@media (max-width:560px) {
+    .scrolltop {
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px
+    }
+}
+
+/* Tapify Register page
+   Uses brand tokens from style.css:
+   --brand-mint, --brand-orange, --brand-gold, --bg-900, --text-100/300/500, --shadow
+*/
+
+.page--register .header {
+    background: linear-gradient(180deg, rgba(13, 13, 13, .92), rgba(13, 13, 13, .5));
+    border-bottom-color: rgba(255, 255, 255, .08);
+}
+
+.register-hero {
+    position: relative;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.video-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-bg__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.05) brightness(.9);
+}
+
+.video-bg__overlay {
+    position: absolute;
+    inset: 0;
+    /* subtle mint/gold glow with dark veil */
+    background: radial-gradient(900px 500px at 85% -10%, rgba(255, 213, 74, .18), transparent 60%), radial-gradient(800px 400px at 10% 110%, rgba(179, 245, 228, .12), transparent 60%), linear-gradient(180deg, rgba(0, 0, 0, .60), rgba(0, 0, 0, .60));
+    z-index: -1;
+}
+
+.register__wrap {
+    position: relative;
+}
+
+.register__card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+    backdrop-filter: blur(8px) saturate(120%);
+}
+
+/* Form UI */
+
+.form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+@media (max-width:700px) {
+    .form__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.field__label {
+    color: var(--text-100);
+    font-weight: 600;
+}
+
+.field__input {
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: rgba(0, 0, 0, .25);
+    color: var(--text-300);
+    outline: none;
+    transition: border-color .15s ease, background .15s ease;
+}
+
+.field__input:focus {
+    border-color: var(--brand-mint);
+    background: rgba(0, 0, 0, .35);
+}
+
+.field__hint {
+    color: var(--text-500);
+    font-size: 12px;
+}
+
+.field--password {
+    position: relative;
+}
+
+.pw-toggle {
+    position: absolute;
+    right: 8px;
+    top: 36px;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .10);
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: var(--text-300);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0 6px;
+}
+
+.check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #111;
+}
+
+.check .link {
+    font-weight: 700;
+    color: var(--brand-mint);
+    text-decoration: underline;
+}
+
+.form__errors {
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 0, 0, .25);
+    background: rgba(255, 0, 0, .08);
+    color: #ffb5b5;
+}
+
+.form__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+/* Hide honeypot */
+
+.hp {
+    position: absolute !important;
+    left: -9999px !important;
+    opacity: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+}
+
+/* Testimonials */
+
+.t-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width:900px) {
+    .t-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.t-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+}
+
+.t-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.t-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.t-stars {
+    color: var(--brand-gold);
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+/* Tapify Payment page
+   Relies on brand tokens from style.css:
+   --brand-mint, --brand-orange, --brand-gold, --bg-900, --text-100/300/500, --shadow
+*/
+
+.page--payment .header {
+    background: linear-gradient(180deg, rgba(13, 13, 13, .92), rgba(13, 13, 13, .5));
+    border-bottom-color: rgba(255, 255, 255, .08);
+}
+
+.payment-hero {
+    position: relative;
+    padding: 28px 0 32px;
+}
+
+.video-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-bg__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(1.05) brightness(.9);
+}
+
+.video-bg__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(900px 500px at 85% -10%, rgba(255, 213, 74, .18), transparent 60%), radial-gradient(800px 400px at 10% 110%, rgba(179, 245, 228, .12), transparent 60%), linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .65));
+    z-index: -1;
+}
+
+/* Layout */
+
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1.1fr .9fr;
+}
+
+@media (max-width: 960px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .04));
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+    backdrop-filter: blur(8px) saturate(120%);
+}
+
+.field__label {
+    color: var(--text-100);
+    font-weight: 600;
+}
+
+.field__input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 4px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    background: rgba(0, 0, 0, .25);
+    color: var(--text-300);
+}
+
+/* Buttons */
+
+.cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: .2px;
+    text-decoration: none;
+    background: linear-gradient(90deg, var(--brand-orange), var(--brand-gold));
+    color: #111;
+    box-shadow: 0 10px 22px rgba(255, 140, 36, .35);
+    transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.cta:hover {
+    transform: translateY(-1px);
+    opacity: .95;
+}
+
+.ghost {
+    background: transparent;
+    color: var(--text-100);
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: none;
+}
+
+/* Rows */
+
+.row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.row>* {
+    flex: 1;
+}
+
+/* Countdown */
+
+.countdown {
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .06);
+    margin-top: 10px;
+}
+
+.big {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+/* Payment details emphasis */
+
+.payment-details p strong {
+    color: var(--brand-mint);
+}
+
+/* Copy button */
+
+.copy-btn {
+    margin-left: .5rem;
+    padding: .35rem .6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: transparent;
+    color: var(--text-100);
+    cursor: pointer;
+}
+
+/* Testimonials */
+
+.testimonials {
+    padding: 14px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, .1);
+    padding: .25rem .5rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    margin-left: .5rem;
+}
+
+.t-box {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 14px;
+    padding: 12px;
+    min-height: 140px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.t-box.show {
+    opacity: 1;
+}
+
+.t-box p {
+    margin: .25rem 0;
+    line-height: 1.55;
+}
+
+.t-box strong {
+    color: var(--brand-gold);
+}
+
+.t-box em {
+    color: var(--brand-orange);
+    font-style: normal;
+}
+
+/* Help card */
+
+.help-card {
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Utility */
+
+.meta {
+    color: var(--text-500);
+}
+
+.h3 {
+    font-size: 20px;
+    color: var(--text-100);
+    margin: 10px 0;
+}
+
+/* ---- Fallback brand tokens (in case /css/style.css doesn't define them) ---- */
+
+:root {
+    --text-100: #ffffff;
+    --text-300: #eeeeee;
+    --text-500: #bbbbbb;
+    --brand-orange: #FF8C24;
+    --brand-gold: #FFD54A;
+    --brand-mint: #B3F5E4;
+}
+
+/* ---- Ensure CTA text is readable regardless of global rules ---- */
+
+.card .cta,
+.cta {
+    color: #111 !important;
+    /* dark text on the gold/orange gradient */
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    text-shadow: none !important;
+    -webkit-text-fill-color: initial !important;
+    /* guard against gradient-text utilities */
+    white-space: nowrap;
+    /* prevent weird wraps on small screens */
+}
+
+.cta.ghost {
+    color: var(--text-100, #fff) !important;
+    /* ghost button label stays white */
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, .25);
+}
+
+/* Copy buttons inside payment details */
+
+.copy-btn {
+    color: var(--text-100, #fff) !important;
+    font-size: 14px;
+}
+
+/* If you use any .btn utility elsewhere that zeroes font-size, correct it here */
+
+button,
+.btn,
+.cta {
+    font-size: 16px;
+}
+
+/* Make sure any child text inherits color */
+
+.cta * {
+    color: inherit !important;
+}
+
+.powered-by-btn {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    /* Move to the left side */
+    background: #FEE440;
+    color: #3B0A64;
+    font-weight: 500;
+    padding: 4px 10px;
+    /* Reduced padding for smaller size */
+    border-radius: 30px;
+    font-size: 9px;
+    /* Smaller font size */
+    box-shadow: 0 3px 8px rgba(255, 255, 255, 0.15);
+    text-align: center;
+    text-decoration: none;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    line-height: 1.2;
+}
+
+.powered-by-btn:hover {
+    background: #FF1FB0;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 111, 200, 0.4);
+}

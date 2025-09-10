@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Essentials -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register – Tapify</title>
+
+    <!-- SEO / Share -->
+    <meta name="description" content="Create your Tapify account and unlock access with a one-time ₦10,000 fee. Video-backed form, fast validation, and mentorship access after activation." />
+    <link rel="canonical" href="https://tapifyplatform.net/register" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tapifyplatform.net/register" />
+    <meta property="og:title" content="Register – Tapify" />
+    <meta property="og:description" content="Join Tapify in minutes. Streaks, freebies, delivery tasks, social payouts, and global jobs." />
+    <meta property="og:image" content="https://tapifyplatform.net/assets/images/preview.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://tapifyplatform.net/register" />
+    <meta name="twitter:title" content="Register – Tapify" />
+    <meta name="twitter:description" content="Join Tapify in minutes. Streaks, freebies, delivery tasks, social payouts, and global jobs." />
+    <meta name="twitter:image" content="https://tapifyplatform.net/assets/images/preview.jpg" />
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/register.css" />
+</head>
+
+<body class="page--register">
+    <!-- Header (same as home, with mobile toggle) -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="/" aria-label="Tapify home" class="logo">
+        <img src="/assets/images/tapifylogo.png" alt="Tapify logo">
+      </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Registration section with VIDEO BACKGROUND -->
+        <section class="register-hero">
+            <!-- Background video -->
+            <div class="video-bg" aria-hidden="true">
+                <video class="video-bg__media" poster="/assets/video/vid2.mp4" autoplay muted loop playsinline>
+          <source src="/assets/video/vid2.mp4" type="video/mp4" />
+        </video>
+                <div class="video-bg__overlay"></div>
+            </div>
+
+            <div class="container register__wrap">
+                <div class="register__card" role="region" aria-labelledby="regTitle">
+                    <h1 id="regTitle" class="h1" style="margin-bottom:6px;">Create your Tapify account</h1>
+                    <p class="meta" style="margin-bottom:16px;">
+                        One-time access fee: <strong>₦10,000</strong>. Activation within 24 hours after payment.
+                    </p>
+
+                    <form id="registerForm" class="form" action="/payment" method="GET" novalidate>
+                        <!-- Honeypot (spam trap) -->
+                        <input type="text" name="website" id="website" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true">
+
+                        <div class="form__grid">
+                            <label class="field">
+                <span class="field__label">Full Name</span>
+                <input class="field__input" type="text" name="full_name" id="full_name" placeholder="e.g. Joseph AaiJay" required>
+              </label>
+
+                            <label class="field">
+                <span class="field__label">Username</span>
+                <input class="field__input" type="text" name="username" id="username" minlength="3" maxlength="16" placeholder="lowercase, no spaces" required>
+                <small class="field__hint">3–16 chars, letters & numbers</small>
+              </label>
+
+                            <label class="field">
+                <span class="field__label">Email</span>
+                <input class="field__input" type="email" name="email" id="email" placeholder="you@example.com" required>
+              </label>
+
+                            <label class="field">
+                <span class="field__label">Phone Number</span>
+                <input class="field__input" type="tel" name="phone" id="phone" inputmode="tel" placeholder="+234 813 513 7369" required>
+              </label>
+
+                            <label class="field field--password">
+                <span class="field__label">Password</span>
+                <input class="field__input" type="password" name="password" id="password" minlength="8" placeholder="Min. 8 characters" required>
+                <button type="button" class="pw-toggle" aria-label="Show password">Show</button>
+              </label>
+
+                            <label class="field field--password">
+                <span class="field__label">Confirm Password</span>
+                <input class="field__input" type="password" name="confirm_password" id="confirm_password" minlength="8" placeholder="Re-enter password" required>
+                <button type="button" class="pw-toggle" aria-label="Show password">Show</button>
+              </label>
+
+                            <label class="field" aria-readonly="true">
+                <span class="field__label">Selected Access</span>
+                <input class="field__input" type="text" value="Tapify Access — ₦10,000 (One-Time)" readonly>
+              </label>
+                        </div>
+
+                        <div id="formErrors" class="form__errors" role="alert" aria-live="polite" hidden></div>
+
+                        <div class="form__actions">
+                            <button class="btn btn--primary" type="submit" id="submitBtn">Create Account & Continue to Payment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section">
+            <div class="container">
+                <h2 class="h2">What Tapifiers are saying</h2>
+                <div class="t-grid" id="tGrid">
+                    <article class="t-card">
+                        <div class="t-head">
+                            <div><strong>Ada</strong><br><span class="meta">Lagos</span></div>
+                        </div>
+                        <div class="t-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                        <p>“Started for the freebies, stayed for the streaks. I now pull steady weekly payouts.”</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <div><strong>Seyi</strong><br><span class="meta">Abuja</span></div>
+                        </div>
+                        <div class="t-stars">★★★★★</div>
+                        <p>“Delivery tasks + social uploads = simple and fast. Mentor class helped a lot.”</p>
+                    </article>
+
+                    <article class="t-card">
+                        <div class="t-head">
+                            <div><strong>Bola</strong><br><span class="meta">Port Harcourt</span></div>
+                        </div>
+                        <div class="t-stars">★★★★★</div>
+                        <p>“Paid on Friday as promised. The global job board also got me a remote gig.”</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floating Powered By Button -->
+        <a href="https://josephaaijay.vercel.app" class="powered-by-btn" target="_blank" title="Visit Nexa by AaiJay">
+    <small>BUILT by<br><strong>NexaTech</strong></small>
+  </a>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">© 2025 Tapify. All rights reserved.</div>
+    </footer>
+
+    <!-- Scroll to top (reuse) -->
+    <button id="scrollTopBtn" class="scrolltop" type="button" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 5l-7 7h4v7h6v-7h4l-7-7z" fill="#111"/>
+    </svg>
+  </button>
+
+    <!-- JS -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/register.js"></script>
+
+    <script>
+        (function() {
+            var form = document.getElementById('registerForm');
+            if (!form) return;
+
+            // Clear any prefilled email & password fields on load
+            var emailInput = form.querySelector('#email');
+            var pwInput = form.querySelector('#password');
+            var cpwInput = form.querySelector('#confirm_password');
+            if (emailInput) {
+                emailInput.value = '';
+                emailInput.setAttribute('autocomplete', 'off');
+            }
+            if (pwInput) {
+                pwInput.value = '';
+                pwInput.setAttribute('autocomplete', 'new-password');
+            }
+            if (cpwInput) {
+                cpwInput.value = '';
+                cpwInput.setAttribute('autocomplete', 'new-password');
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var fd = new FormData(form);
+                var name = (fd.get('full_name') || '').trim();
+                var username = (fd.get('username') || '').trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+                var email = (fd.get('email') || '').trim();
+                var phone = (fd.get('phone') || '').trim();
+
+                // Honeypot (if present)
+                var hp = form.querySelector('#website');
+                if (hp && hp.value.trim() !== '') return;
+
+                var data = {
+                    name: name,
+                    username: username,
+                    email: email,
+                    phone: phone,
+                    amount: 10000,
+                    packageName: 'Tapify Access — ₦10,000 (One-Time)'
+                };
+
+                try {
+                    sessionStorage.setItem('tapify_reg', JSON.stringify(data));
+                } catch (e) {}
+
+                var params = new URLSearchParams({
+                    name: name,
+                    username: username,
+                    email: email,
+                    phone: phone,
+                    amount: String(data.amount),
+                    packageName: data.packageName
+                });
+
+                var btn = document.getElementById('submitBtn');
+                if (btn) {
+                    btn.disabled = true;
+                    btn.setAttribute('aria-busy', 'true');
+                }
+
+                // Redirect to Selar payment page instead of Tapify payment page
+                var target = 'https://selar.com/4f79597994';
+                window.location.assign(target + '?' + params.toString());
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

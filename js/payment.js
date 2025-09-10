@@ -1,0 +1,1 @@
+No Content: https://tapifyplatform.net/js/payment.js
