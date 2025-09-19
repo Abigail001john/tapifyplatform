@@ -92,9 +92,33 @@
 
                     <div class="countdown" aria-live="polite">
                         <div class="muted">Complete payment within</div>
-                        <div class="big" id="timer">06:00</div>
+                        <div class="big" id="timer">10:00</div>
                         <div class="muted">A fresh reference will be generated if time runs out.</div>
                     </div>
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var timerDisplay = document.getElementById("timer");
+                        var duration = 10 * 60; // 10 minutes in seconds
+                        var remaining = duration;
+
+                        function updateTimer() {
+                            var minutes = Math.floor(remaining / 60);
+                            var seconds = remaining % 60;
+                            timerDisplay.textContent = 
+                                (minutes < 10 ? "0" : "") + minutes + ":" + 
+                                (seconds < 10 ? "0" : "") + seconds;
+                            if (remaining > 0) {
+                                remaining--;
+                            } else {
+                                clearInterval(timerInterval);
+                                // Optionally, trigger reference regeneration here
+                            }
+                        }
+
+                        updateTimer();
+                        var timerInterval = setInterval(updateTimer, 1000);
+                    });
+                    </script>
 
                     <!-- WARNING PROMPT -->
                     <div role="alert" style="
@@ -107,16 +131,16 @@
           font-weight:700;
           text-transform:uppercase;
           letter-spacing:.3px;">
-                        ⚠️ DO NOT USE OPAY AND PALMPAY TO MAKE PAYMENTS. USE OTHER BANKS TO TRANSFER.
+                        ⚠️ DO NOT USE OPAY TO MAKE PAYMENTS. USE OTHER BANKS TO TRANSFER.
                     </div>
 
                     <h2 class="h3" style="margin-top:16px;">Bank Transfer Details</h2>
                     <div class="payment-details">
-                        <p><strong>Account Name:</strong> <span id="accName">Success Nneamaka</span>
+                        <p><strong>Account Name:</strong> <span id="accName">Raenest/John Ayodeji</span>
                             <button class="copy-btn" data-copy="accName">Copy</button></p>
-                        <p><strong>Bank:</strong> <span id="bank">Palmpay</span>
+                        <p><strong>Bank Name:</strong> <span id="bank">Kredi Money Mfb Ltd</span>
                             <button class="copy-btn" data-copy="bank">Copy</button></p>
-                        <p><strong>Account Number:</strong> <span id="accNumber">8169745752</span>
+                        <p><strong>Account Number:</strong> <span id="accNumber">1829604399</span>
                             <button class="copy-btn" data-copy="accNumber">Copy</button></p>
                         <p><strong>Amount (NGN):</strong> <span id="amountText">10,000</span>
                             <button class="copy-btn" data-copy="amountText">Copy</button></p>
@@ -126,9 +150,6 @@
 
                     <div class="row" style="margin-top:12px;">
                         <button class="cta" id="confirmBtn">I Have Paid — Confirm on WhatsApp</button>
-                        <a class="cta" id="confirmTGBtn" href="https://t.me/Workwaveofficial2" target="_blank" rel="noopener">
-    I Have Paid — Confirm on Telegram
-  </a>
                         <button class="cta ghost" id="helpBtn">Need Help? Chat Admin</button>
                     </div>
                     <p class="meta" style="margin-top:8px">After payment, tap “Confirm on WhatsApp.” We’ll verify and activate your access within 24 hours.</p>
@@ -153,7 +174,7 @@
             <!-- International help -->
             <section class="card help-card" aria-label="International payments">
                 <p>🌍 <strong>Not in Nigeria?</strong> Message us for alternative payment options.</p>
-                <a class="cta" target="_blank" rel="noopener" href="https://wa.me/2349040989441?text=Hi%20Tapify%20Support%2C%20I%27m%20outside%20Nigeria%20and%20want%20to%20pay.%20Please%20guide%20me.">Chat With Admin</a>
+                <a class="cta" target="_blank" rel="noopener" href="https://wa.me/2349158581209?text=Hi%20Tapify%20Support%2C%20I%27m%20outside%20Nigeria%20and%20want%20to%20pay.%20Please%20guide%20me.">Chat With Admin</a>
             </section>
         </div>
     </section>
